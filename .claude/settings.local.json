@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(python3 -c ' *)",
+      "Bash(pip3 install *)",
+      "Bash(apt-get install *)",
+      "Bash(python3 -m pip install python-pptx -q)",
+      "Bash(sudo apt-get install -y python3-pip -q)",
+      "Bash(python3 -m pip install python-pptx --break-system-packages -q)",
+      "Bash(python3 *)"
+    ]
+  }
+}
