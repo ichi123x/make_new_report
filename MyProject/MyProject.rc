@@ -1,0 +1,30 @@
+#pragma code_page(65001)  // UTF-8
+
+#include "resource.h"
+#include <windows.h>
+
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 400, 260
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "撮影報告書 自動生成ツール"
+FONT 9, "Meiryo UI", 400, 0, 0x80
+BEGIN
+    LTEXT           "テンプレートファイル (見本):",
+                    IDC_STATIC, 10, 14, 130, 10
+    EDITTEXT        IDC_TEMPLATE_PATH, 10, 26, 320, 14,
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "参照...", IDC_TEMPLATE_BROWSE, 338, 25, 52, 16
+
+    LTEXT           "出力先ファイル:",
+                    IDC_STATIC, 10, 52, 130, 10
+    EDITTEXT        IDC_OUTPUT_PATH, 10, 64, 320, 14, ES_AUTOHSCROLL
+    PUSHBUTTON      "参照...", IDC_OUTPUT_BROWSE, 338, 63, 52, 16
+
+    PUSHBUTTON      "コンバート開始", IDC_CONVERT_BTN,
+                    140, 90, 120, 22
+
+    LTEXT           "ログ:", IDC_STATIC, 10, 122, 30, 10
+    EDITTEXT        IDC_LOG, 10, 132, 380, 118,
+                    ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL | NOT WS_TABSTOP
+END
