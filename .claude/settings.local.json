@@ -10,7 +10,11 @@
       "Bash(python3 -m pip install python-pptx --break-system-packages -q)",
       "Bash(python3 *)",
       "Bash(git ls-tree *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(grep -iE '\\\\.\\(sln|vcxproj|filters|rc|rc2\\)$')",
+      "Bash(git restore *)"
     ]
   }
 }

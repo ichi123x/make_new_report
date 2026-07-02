@@ -1,2 +1,84 @@
-# Auto detect text files and perform LF normalization
+# ==========================================================================
+# .gitattributes for MFC C++ (Visual Studio 2022) project
+#
+# 方針:
+#   - リポジトリ内部では改行コードを LF で正規化して保存する
+#   - Windows での作業ツリー(チェックアウト時)は CRLF に展開する
+#   - Visual Studio が扱うファイルは CRLF を明示して警告を防ぐ
+# ==========================================================================
+
+# 既定: テキストと判定したものは自動正規化(リポジトリ内は LF)
 * text=auto
+
+# --------------------------------------------------------------------------
+# C/C++ ソース・ヘッダ (作業ツリーは CRLF)
+# --------------------------------------------------------------------------
+*.c     text eol=crlf
+*.cc    text eol=crlf
+*.cpp   text eol=crlf
+*.cxx   text eol=crlf
+*.h     text eol=crlf
+*.hh    text eol=crlf
+*.hpp   text eol=crlf
+*.hxx   text eol=crlf
+*.inl   text eol=crlf
+*.tlh   text eol=crlf
+*.tli   text eol=crlf
+
+# --------------------------------------------------------------------------
+# Visual Studio プロジェクト / ソリューション (CRLF 必須)
+# --------------------------------------------------------------------------
+*.sln             text eol=crlf
+*.vcxproj         text eol=crlf
+*.vcxproj.filters text eol=crlf
+*.vcxproj.user    text eol=crlf
+*.props           text eol=crlf
+*.targets         text eol=crlf
+
+# --------------------------------------------------------------------------
+# MFC リソース関連 (CRLF 必須)
+#   ※ .rc は UTF-16LE(BOM付き)で保存されている場合があります。
+#     その場合は該当行に working-tree-encoding=UTF-16LE-BOM を追記してください。
+# --------------------------------------------------------------------------
+*.rc    text eol=crlf
+*.rc2   text eol=crlf
+*.def   text eol=crlf
+*.idl   text eol=crlf
+*.odl   text eol=crlf
+
+# --------------------------------------------------------------------------
+# その他テキスト設定ファイル
+# --------------------------------------------------------------------------
+*.manifest     text eol=crlf
+*.bat          text eol=crlf
+*.cmd          text eol=crlf
+*.ps1          text eol=crlf
+*.editorconfig text
+
+# クロスプラットフォームで扱うもの (LF)
+*.md   text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.sh   text eol=lf
+
+# --------------------------------------------------------------------------
+# バイナリ (差分・改行変換の対象外)
+# --------------------------------------------------------------------------
+*.pptx binary
+*.docx binary
+*.xlsx binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.bmp  binary
+*.cur  binary
+*.res  binary
+*.lib  binary
+*.dll  binary
+*.exe  binary
+*.pdb  binary
+*.aps  binary

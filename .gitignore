@@ -4,3 +4,15 @@ node_modules/
 .env.*.local
 *.log
 .DS_Store
+.vs/
+x64/
+Debug/
+Release/
+*.suo
+*.user
+*.obj
+*.ilk
+*.ipch
+*.pch
+*.db
+*.opendb
